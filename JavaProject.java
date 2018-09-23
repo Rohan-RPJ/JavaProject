@@ -28,7 +28,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author sirji
+ * @author Rohan Prakash Jain
  */
 public class JavaProject extends Application {
  
