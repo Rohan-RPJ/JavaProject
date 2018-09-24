@@ -291,12 +291,82 @@ public class JavaProject extends Application {
         page_1.add(forgot_pw,0,24);
         forgot_pw.setId("forgot-pw");
         
-        //
-        /*forgot_pw.setOnAction(e ->{   
-                   
-            new NewAccount(); 
+        forgot_pw.setOnAction(new EventHandler<ActionEvent>(){
+ 
+            @Override
+            public void handle(ActionEvent e)
+            {       
+                //new account page
+                Stage new_account_page = new Stage();
+                new_account_page.setTitle("Forgot Password");
             
-        }); */
+                 //GridPane Layout 
+                 GridPane new_account_pane = new GridPane();
+                 //making gridlines visible
+                 new_account_pane.setGridLinesVisible(true); 
+            
+                 //css effects for page_1 i.e. gridpane
+                 //page_1.setId("page");
+       
+                 //setting gaps between rows and columns of grid 
+                 new_account_pane.setHgap(10);
+                 new_account_pane.setVgap(10);
+        
+                //padding of gridpane in scene
+                new_account_pane.setPadding(new Insets(50,50,50,50));
+            
+                //
+                new_account_pane.centerShapeProperty();
+            
+                //
+                Text user_id = new Text("User Id :");
+                new_account_pane.add(user_id,0,0);
+                //css effects same as that for text on 1st page 
+                user_id.setId("page");
+            
+                //
+                TextField user_id_tf = new TextField();
+                user_id_tf.setPromptText("Enter your user id");
+                new_account_pane.add(user_id_tf,1,0);
+            
+                //
+                Text new_passwd = new Text("New Password :");
+                new_account_pane.add(new_passwd,0,2);
+                //css effects same as that for text on 1st page 
+                user_id.setId("page");
+                
+                //
+                PasswordField new_passwd_tf = new PasswordField();
+                new_passwd_tf.setPromptText("Enter your new Password");
+                new_account_pane.add(new_passwd_tf,1,2);
+                
+                Scene new_acc_scene = new Scene(new_account_pane,500,450);
+            
+                //
+                new_acc_scene.getStylesheets().add(JavaProject.class.getResource("JavaProject.css").toExternalForm());
+        
+                new_account_page.setScene(new_acc_scene);
+                new_account_page.show();
+        
+        
+                new_account_page.setScene(new_acc_scene);
+                new_account_page.show();
+            }         
+        }); 
+        
+        //
+        Button sign_in_btn = new Button("Sign in");
+        page_1.add(sign_in_btn, 0, 28);
+        
+        //
+        Button sign_up_btn = new Button("Sign up");
+        page_1.add(sign_up_btn, 1, 28);
+        
+        sign_in_btn.setOnAction(e->{
+           Stage stage = new Stage();
+           stage.setTitle("Abc");
+           stage.show();
+        });
         
         //
         Button sign_in_btn = new Button("Sign in");
