@@ -1,2 +1,0 @@
-# JavaProject
-GUI
